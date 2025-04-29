@@ -34,7 +34,7 @@
       color: #FFD700;
       animation: moveText 12s linear infinite;
       margin-right: 30px;
-      opacity: 0; /* إخفاء النصوص في البداية */
+      opacity: 0;
     }
 
     .text1 { animation-delay: 0s; opacity: 1; }
@@ -43,10 +43,9 @@
 
     @keyframes moveText {
       0%   { left: 100%; opacity: 0; }
-      20%  { opacity: 1; }
-      50%  { left: 50%; transform: translateX(-50%); }
-      80%  { opacity: 0; }
-      100% { left: -100%; }
+      20%  { opacity: 1; left: 50%; transform: translateX(-50%); }
+      40%  { left: -100%; opacity: 0; }
+      100% { left: 100%; opacity: 0; }
     }
 
     footer {
