@@ -19,7 +19,7 @@
     header h1, header p, header .delivery {
       position: absolute;
       white-space: nowrap;
-      animation: moveText 10s linear infinite;
+      animation: moveText 12s linear infinite;
     }
     header h1 {
       font-size: 36px;
@@ -27,14 +27,16 @@
     }
     header p {
       font-size: 18px;
-      animation-delay: 5s;
+      animation-delay: 4s;
     }
     header .delivery {
       font-size: 16px;
-      animation-delay: 10s;
+      animation-delay: 8s;
     }
     @keyframes moveText {
       0% { transform: translateX(100%); }
+      33.33% { transform: translateX(0); }
+      66.66% { transform: translateX(-100%); }
       100% { transform: translateX(-100%); }
     }
     footer { background-color: #111; color: white; text-align: center; padding: 20px; }
