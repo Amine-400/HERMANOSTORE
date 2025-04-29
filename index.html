@@ -21,6 +21,7 @@
 
     /* النصوص التي ستظهر وتتحرك */
     .marquee-container {
+      display: flex;
       position: absolute;
       width: 100%;
       overflow: hidden;
@@ -38,19 +39,16 @@
       animation-delay: 0s;
     }
 
-    .text2 { 
+    .text2 {
       animation-delay: 4s;
     }
 
-    .text3 { 
+    .text3 {
       animation-delay: 8s;
     }
 
     @keyframes moveText {
       0%   { left: 100%; }
-      10%  { left: 50%; transform: translateX(-50%); }
-      30%  { left: 50%; transform: translateX(-50%); }
-      40%  { left: -100%; }
       100% { left: -100%; }
     }
 
