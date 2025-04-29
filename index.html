@@ -8,6 +8,7 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
     body { background-color: #f9f9f9; color: #333; }
+
     header {
       background-color: #111;
       color: white;
@@ -16,36 +17,50 @@
       position: relative;
       overflow: hidden;
       height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
-    .marquee-text {
+
+    /* النصوص التي ستظهر وتتحرك */
+    .marquee-container {
       position: absolute;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .marquee-text {
       white-space: nowrap;
+      animation: moveText 12s linear infinite;
       font-size: 24px;
-      opacity: 0; /* النصوص مخفية في البداية */
-      animation: fadeIn 4s forwards;
-      font-weight: bold; /* خط عريض */
-      color: #FFD700; /* لون ذهبي */
-    }
-    .text1 { animation-delay: 0s; } /* يظهر أولا */
-    .text2 { animation-delay: 4s; } /* يظهر بعد 4 ثواني */
-    .text3 { animation-delay: 8s; } /* يظهر بعد 8 ثواني */
-
-    @keyframes fadeIn {
-      0%   { opacity: 0; }
-      10%  { opacity: 1; }
-      100% { opacity: 1; }
     }
 
-    footer { background-color: #111; color: white; text-align: center; padding: 20px; }
+    .text1 {
+      animation-delay: 0s;
+      font-size: 40px;
+      font-weight: bold;
+      color: #FFD700;
+    }
+
+    .text2 { animation-delay: 4s; }
+    .text3 { animation-delay: 8s; }
+
+    @keyframes moveText {
+      0%   { left: 100%; }
+      100% { left: -100%; }
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
     .sections {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       padding: 40px;
     }
+
     .section {
       background-color: white;
       border-radius: 15px;
@@ -56,9 +71,11 @@
       color: inherit;
       transition: transform 0.3s ease;
     }
+
     .section:hover { transform: scale(1.03); }
     .section img { width: 100%; height: 250px; object-fit: cover; }
     .section h2 { padding: 20px; font-size: 24px; }
+
     @media (max-width: 768px) {
       .sections { padding: 20px; }
       .section h2 { font-size: 20px; }
@@ -67,9 +84,11 @@
 </head>
 <body>
   <header>
-    <div class="marquee-text text1">HERMANOSTORE</div>
-    <div class="marquee-text text2">Découvrez nos catégories exclusives</div>
-    <div class="marquee-text text3">توصيل إلى جميع ربوع المملكة في غضون 24 ساعة</div>
+    <div class="marquee-container">
+      <div class="marquee-text text1">HERMANOSTORE</div>
+      <div class="marquee-text text2">Découvrez nos catégories exclusives</div>
+      <div class="marquee-text text3">توصيل إلى جميع ربوع المملكة في غضون 24 ساعة</div>
+    </div>
   </header>
 
   <div class="sections">
