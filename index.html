@@ -16,38 +16,27 @@
       position: relative;
       overflow: hidden;
       height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .marquee-text {
       position: absolute;
       white-space: nowrap;
-      animation: moveText 12s linear infinite;
       font-size: 24px;
-    }
-    .text1 {
-      animation-delay: 0s;
-      font-size: 40px; /* تكبير النص */
+      opacity: 0; /* النصوص مخفية في البداية */
+      animation: fadeIn 4s forwards;
       font-weight: bold; /* خط عريض */
       color: #FFD700; /* لون ذهبي */
     }
-    .text2 {
-      animation-delay: 4s;
-      font-size: 24px;
-      font-weight: bold;
-      color: #FFD700; /* لون ذهبي */
-    }
-    .text3 {
-      animation-delay: 8s;
-      font-size: 24px;
-      font-weight: bold;
-      color: #FFD700; /* لون ذهبي */
-    }
+    .text1 { animation-delay: 0s; } /* يظهر أولا */
+    .text2 { animation-delay: 4s; } /* يظهر بعد 4 ثواني */
+    .text3 { animation-delay: 8s; } /* يظهر بعد 8 ثواني */
 
-    @keyframes moveText {
-      0%   { left: 100%; }
-      10%  { left: 50%; transform: translateX(-50%); }
-      40%  { left: 50%; transform: translateX(-50%); }
-      50%  { left: -100%; }
-      100% { left: -100%; }
+    @keyframes fadeIn {
+      0%   { opacity: 0; }
+      10%  { opacity: 1; }
+      100% { opacity: 1; }
     }
 
     footer { background-color: #111; color: white; text-align: center; padding: 20px; }
