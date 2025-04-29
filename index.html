@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boutique Sportive</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+    body { background-color: #f9f9f9; color: #333; }
+    header, footer { background-color: #111; color: white; text-align: center; padding: 20px; }
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+    .section {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease;
+    }
+    .section:hover { transform: scale(1.03); }
+    .section img { width: 100%; height: 200px; object-fit: cover; }
+    .section h2 { padding: 20px; font-size: 24px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Boutique Sportive</h1>
+    <p>Découvrez nos catégories exclusives</p>
+  </header>
+  <div class="sections">
+    <a href="chaussures.html" class="section">
+      <img src="https://via.placeholder.com/600x400?text=Chaussures+Sportives" alt="Chaussures">
+      <h2>Chaussures Sportives</h2>
+    </a>
+    <a href="vetements.html" class="section">
+      <img src="https://via.placeholder.com/600x400?text=Vêtements+Sportifs" alt="Vêtements">
+      <h2>Vêtements Sportifs</h2>
+    </a>
+    <a href="accessoires.html" class="section">
+      <img src="https://via.placeholder.com/600x400?text=Accessoires+Sportifs" alt="Accessoires">
+      <h2>Accessoires Sportifs</h2>
+    </a>
+  </div>
+  <footer>
+    <p>&copy; 2025 Boutique Sportive. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
