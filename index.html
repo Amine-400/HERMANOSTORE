@@ -16,7 +16,7 @@
       position: relative;
       overflow: hidden;
     }
-    header h1, header p {
+    header h1, header p, header .delivery {
       position: absolute;
       white-space: nowrap;
       animation: moveText 10s linear infinite;
@@ -27,11 +27,14 @@
     }
     header p {
       font-size: 18px;
-      animation-delay: 5s; /* تغيير التأخير ليظهر النص الثاني بعد الأول */
+      animation-delay: 5s;
+    }
+    header .delivery {
+      font-size: 16px;
+      animation-delay: 10s;
     }
     @keyframes moveText {
       0% { transform: translateX(100%); }
-      50% { transform: translateX(0); }
       100% { transform: translateX(-100%); }
     }
     footer { background-color: #111; color: white; text-align: center; padding: 20px; }
@@ -64,6 +67,7 @@
   <header>
     <h1>HERMANOSTORE</h1>
     <p>Découvrez nos catégories exclusives</p>
+    <div class="delivery">توصيل إلى جميع ربوع المملكة في غضون 24 ساعة</div>
   </header>
   <div class="sections">
     <a href="chaussures.html" class="section">
