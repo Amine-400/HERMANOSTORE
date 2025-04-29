@@ -21,10 +21,10 @@
 
     /* النصوص التي ستظهر وتتحرك */
     .marquee-container {
-      display: flex;
       position: absolute;
       width: 100%;
       overflow: hidden;
+      display: flex;
     }
 
     .marquee-text {
@@ -33,23 +33,19 @@
       font-weight: bold;
       color: #FFD700;
       animation: moveText 12s linear infinite;
-      margin-right: 30px; /* إضافة المسافة بين النصوص */
+      margin-right: 30px;
+      opacity: 0; /* إخفاء النصوص في البداية */
     }
 
-    .text1 {
-      animation-delay: 0s;
-    }
-
-    .text2 {
-      animation-delay: 4s;
-    }
-
-    .text3 {
-      animation-delay: 8s;
-    }
+    .text1 { animation-delay: 0s; opacity: 1; }
+    .text2 { animation-delay: 4s; }
+    .text3 { animation-delay: 8s; }
 
     @keyframes moveText {
-      0%   { left: 100%; }
+      0%   { left: 100%; opacity: 0; }
+      20%  { opacity: 1; }
+      50%  { left: 50%; transform: translateX(-50%); }
+      80%  { opacity: 0; }
       100% { left: -100%; }
     }
 
