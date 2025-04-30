@@ -47,17 +47,28 @@
       white-space: nowrap;
       font-size: 20px;
       color: #FFD700;
-      animation: slideText 12s linear infinite;
       text-shadow: 1px 1px 2px black;
+      opacity: 0;
+      animation: slideText 12s ease-in-out infinite;
     }
 
-    .marquee-text:nth-child(1) { animation-delay: 0s; }
-    .marquee-text:nth-child(2) { animation-delay: 4s; }
-    .marquee-text:nth-child(3) { animation-delay: 8s; }
+    .marquee-text:nth-child(1) { 
+      animation: slideText 12s ease-in-out infinite; 
+      animation-delay: 0s;
+    }
+    .marquee-text:nth-child(2) { 
+      animation: slideText 12s ease-in-out infinite; 
+      animation-delay: 4s;
+    }
+    .marquee-text:nth-child(3) { 
+      animation: slideText 12s ease-in-out infinite; 
+      animation-delay: 8s;
+    }
 
     @keyframes slideText {
       0%   { left: 100%; opacity: 1; }
-      5%   { left: 50%; transform: translateX(-50%); }
+      20%  { left: 50%; transform: translateX(-50%); opacity: 1; }
+      30%  { left: 50%; transform: translateX(-50%); opacity: 1; }
       50%  { left: -100%; opacity: 0; }
       100% { left: -100%; opacity: 0; }
     }
