@@ -6,46 +6,46 @@
   <title>HERMANOSTORE</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
-    body { background-color: #f9f9f9; color: #333; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
 
     header {
       background-color: #111;
       color: white;
       text-align: center;
-      padding: 50px 0;
       position: relative;
-      overflow: hidden;
       height: 60px;
+      overflow: hidden;
     }
 
-    /* النصوص التي ستظهر وتتحرك */
-    .marquee-container {
-      position: absolute;
+    .marquee-box {
       width: 100%;
-      overflow: hidden;
-      display: flex;
+      height: 100%;
+      position: relative;
     }
 
     .marquee-text {
+      position: absolute;
       white-space: nowrap;
-      font-size: 40px;
+      font-size: 30px;
       font-weight: bold;
       color: #FFD700;
-      animation: moveText 12s linear infinite;
-      margin-right: 30px;
-      opacity: 0;
+      left: 100%;
+      animation: slideLeft 4s linear forwards;
     }
 
-    .text1 { animation-delay: 0s; opacity: 1; }
-    .text2 { animation-delay: 4s; }
-    .text3 { animation-delay: 8s; }
-
-    @keyframes moveText {
-      0%   { left: 100%; opacity: 0; }
-      20%  { opacity: 1; left: 50%; transform: translateX(-50%); }
-      40%  { left: -100%; opacity: 0; }
-      100% { left: 100%; opacity: 0; }
+    @keyframes slideLeft {
+      0% { left: 100%; }
+      100% { left: -100%; }
     }
 
     footer {
@@ -73,22 +73,36 @@
       transition: transform 0.3s ease;
     }
 
-    .section:hover { transform: scale(1.03); }
-    .section img { width: 100%; height: 250px; object-fit: cover; }
-    .section h2 { padding: 20px; font-size: 24px; }
+    .section:hover {
+      transform: scale(1.03);
+    }
+
+    .section img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .section h2 {
+      padding: 20px;
+      font-size: 24px;
+    }
 
     @media (max-width: 768px) {
-      .sections { padding: 20px; }
-      .section h2 { font-size: 20px; }
+      .sections {
+        padding: 20px;
+      }
+      .section h2 {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="marquee-container">
-      <div class="marquee-text text1">HERMANOSTORE</div>
-      <div class="marquee-text text2">Découvrez nos catégories exclusives</div>
-      <div class="marquee-text text3">توصيل إلى جميع ربوع المملكة في غضون 24 ساعة</div>
+    <div class="marquee-box">
+      <div class="marquee-text" id="marqueeText">HERMANOSTORE</div>
     </div>
   </header>
 
@@ -110,5 +124,28 @@
   <footer>
     <p>&copy; 2025 Boutique Sportive. Tous droits réservés.</p>
   </footer>
+
+  <script>
+    const messages = [
+      "HERMANOSTORE",
+      "Découvrez nos catégories exclusives",
+      "توصيل إلى جميع ربوع المملكة في غضون 24 ساعة"
+    ];
+
+    let index = 0;
+    const textElement = document.getElementById("marqueeText");
+
+    function showMessage() {
+      textElement.textContent = messages[index];
+      textElement.style.animation = "none";
+      void textElement.offsetWidth;
+      textElement.style.animation = "slideLeft 4s linear forwards";
+      index = (index + 1) % messages.length;
+    }
+
+    showMessage();
+    setInterval(showMessage, 4000);
+  </script>
+
 </body>
 </html>
