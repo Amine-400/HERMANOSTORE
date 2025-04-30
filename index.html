@@ -52,18 +52,9 @@
       animation: slideText 12s ease-in-out infinite;
     }
 
-    .marquee-text:nth-child(1) { 
-      animation: slideText 12s ease-in-out infinite; 
-      animation-delay: 0s;
-    }
-    .marquee-text:nth-child(2) { 
-      animation: slideText 12s ease-in-out infinite; 
-      animation-delay: 4s;
-    }
-    .marquee-text:nth-child(3) { 
-      animation: slideText 12s ease-in-out infinite; 
-      animation-delay: 8s;
-    }
+    .marquee-text:nth-child(1) { animation-delay: 0s; }
+    .marquee-text:nth-child(2) { animation-delay: 4s; }
+    .marquee-text:nth-child(3) { animation-delay: 8s; }
 
     @keyframes slideText {
       0%   { left: 100%; opacity: 1; }
@@ -73,7 +64,15 @@
       100% { left: -100%; opacity: 0; }
     }
 
-    /* Sections */
+    .notice {
+      background-color: #ffeeba;
+      text-align: center;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #856404;
+    }
+
     .sections {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -107,7 +106,25 @@
       font-size: 24px;
     }
 
-    /* Footer */
+    .testimonials {
+      background-color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .testimonials h3 {
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: #333;
+    }
+
+    .testimonial {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      font-style: italic;
+      color: #555;
+    }
+
     footer {
       background-color: #111;
       color: white;
@@ -115,53 +132,37 @@
       padding: 20px;
     }
 
-    footer .social-links a {
-      margin: 0 10px;
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
       color: white;
-      font-size: 20px;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 50px;
+      font-size: 18px;
       text-decoration: none;
-    }
-
-    footer .social-links a:hover {
-      color: #FFD700;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 999;
     }
 
     @media (max-width: 768px) {
       .sections {
         padding: 20px;
       }
-
       .section h2 {
         font-size: 20px;
       }
-
-      /* تحسينات الهاتف */
-      header {
-        height: 120px;
+      .testimonials h3 {
+        font-size: 22px;
       }
-
-      .logo {
-        height: 35px;
-      }
-
-      .marquee-text {
+      .testimonial {
         font-size: 16px;
       }
-
-      .section img {
-        height: 200px;
-      }
-
-      .section h2 {
-        font-size: 18px;
-      }
-
-      footer {
-        padding: 15px;
-      }
-
-      footer .social-links a {
-        font-size: 18px;
+      .whatsapp-button {
+        font-size: 16px;
+        padding: 12px 18px;
       }
     }
   </style>
@@ -176,7 +177,10 @@
     </div>
   </header>
 
-  <!-- Sections -->
+  <div class="notice">
+    Livraison gratuite à partir de 299 DH partout au Maroc !
+  </div>
+
   <div class="sections">
     <a href="chaussures.html" class="section">
       <img src="https://i.ibb.co/bMLfcQsQ/734bdc68-02bc-41cf-92b8-8e99269317a4.jpg" alt="Chaussures">
@@ -192,14 +196,17 @@
     </a>
   </div>
 
-  <!-- Footer -->
+  <div class="testimonials">
+    <h3>Avis de nos clients</h3>
+    <p class="testimonial">"Excellent service, livraison rapide et produits de qualité !" — Youssef de Rabat</p>
+    <p class="testimonial">"J’ai commandé des chaussures, je les ai reçues le lendemain !" — Sara de Casablanca</p>
+    <p class="testimonial">"Service client très réactif et professionnel." — Othmane de Fès</p>
+  </div>
+
   <footer>
     <p>&copy; 2025 Boutique Sportive. Tous droits réservés.</p>
-    <div class="social-links">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">Twitter</a>
-    </div>
   </footer>
+
+  <a class="whatsapp-button" href="https://wa.me/212612345678" target="_blank">WhatsApp</a>
 </body>
 </html>
