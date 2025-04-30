@@ -13,16 +13,15 @@
       background-color: #111;
       color: white;
       text-align: center;
-      padding: 20px 0;
+      padding: 30px 0;
       position: relative;
-      overflow: hidden;
-      height: 100px; /* تم تعديل الارتفاع */
+      height: 120px; /* تم تعديل الارتفاع */
     }
 
     /* تنسيق اللوغو */
     .logo {
       position: absolute;
-      top: 10px; /* يرفع اللوغو لأعلى الهيدر */
+      top: 10px; /* اللوغو يجي أعلى بقليل */
       left: 50%;
       transform: translateX(-50%);
       max-width: 150px; /* يمكن تعديل الحجم حسب الرغبة */
@@ -32,13 +31,13 @@
     .marquee-container {
       position: absolute;
       width: 100%;
-      bottom: 0; /* النصوص تكون أسفل الهيدر */
+      bottom: 0; /* النصوص تحت اللوغو */
       overflow: hidden;
     }
 
     .marquee-text {
       white-space: nowrap;
-      animation: moveText 15s linear infinite;
+      animation: moveText 12s linear infinite;
       font-size: 24px;
     }
 
@@ -49,8 +48,8 @@
       color: #FFD700;
     }
 
-    .text2 { animation-delay: 5s; }
-    .text3 { animation-delay: 10s; }
+    .text2 { animation-delay: 4s; }
+    .text3 { animation-delay: 8s; }
 
     @keyframes moveText {
       0%   { left: 100%; }
